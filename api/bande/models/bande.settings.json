@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bandes",
+  "info": {
+    "name": "Bande",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Noms": {
+      "type": "string",
+      "regex": "^\\w"
+    },
+    "race": {
+      "model": "race"
+    },
+    "users_permissions_user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "bandes"
+    }
+  }
+}
