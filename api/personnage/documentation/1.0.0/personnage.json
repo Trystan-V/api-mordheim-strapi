@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/bandes": {
+    "/personnages": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Bande"
+                    "$ref": "#/components/schemas/Personnage"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Bande"
+          "Personnage"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Bande"
+                  "$ref": "#/components/schemas/Personnage"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Bande"
+          "Personnage"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewBande"
+                "$ref": "#/components/schemas/NewPersonnage"
               }
             }
           }
         }
       }
     },
-    "/bandes/count": {
+    "/personnages/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Bande"
+          "Personnage"
         ],
         "parameters": []
       }
     },
-    "/bandes/{id}": {
+    "/personnages/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Bande"
+                  "$ref": "#/components/schemas/Personnage"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Bande"
+          "Personnage"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Bande"
+                  "$ref": "#/components/schemas/Personnage"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Bande"
+          "Personnage"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewBande"
+                "$ref": "#/components/schemas/NewPersonnage"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Bande"
+          "Personnage"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Bande": {
+      "Personnage": {
         "required": [
           "id"
         ],
@@ -525,7 +525,13 @@
           "noms": {
             "type": "string"
           },
-          "race": {
+          "heros": {
+            "type": "boolean"
+          },
+          "xp": {
+            "type": "integer"
+          },
+          "bande": {
             "required": [
               "id"
             ],
@@ -535,6 +541,18 @@
               },
               "noms": {
                 "type": "string"
+              },
+              "race": {
+                "type": "string"
+              },
+              "users_permissions_user": {
+                "type": "string"
+              },
+              "personnages": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "published_at": {
                 "type": "string"
@@ -547,113 +565,25 @@
               }
             }
           },
-          "users_permissions_user": {
-            "required": [
-              "id",
-              "username",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmationToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "bandes": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "personnages": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "noms": {
-                  "type": "string"
-                },
-                "heros": {
-                  "type": "boolean"
-                },
-                "xp": {
-                  "type": "integer"
-                },
-                "bande": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "published_at": {
             "type": "string",
             "format": "date-time"
           }
         }
       },
-      "NewBande": {
+      "NewPersonnage": {
         "properties": {
           "noms": {
             "type": "string"
           },
-          "race": {
-            "type": "string"
+          "heros": {
+            "type": "boolean"
           },
-          "users_permissions_user": {
-            "type": "string"
+          "xp": {
+            "type": "integer"
           },
-          "personnages": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "bande": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -671,7 +601,7 @@
   },
   "tags": [
     {
-      "name": "Bande"
+      "name": "Personnage"
     }
   ]
 }

@@ -1261,7 +1261,7 @@
                 "id": {
                   "type": "string"
                 },
-                "Noms": {
+                "noms": {
                   "type": "string"
                 },
                 "race": {
@@ -1269,6 +1269,12 @@
                 },
                 "users_permissions_user": {
                   "type": "string"
+                },
+                "personnages": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "published_at": {
                   "type": "string"

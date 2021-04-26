@@ -522,7 +522,7 @@
           "id": {
             "type": "string"
           },
-          "Noms": {
+          "noms": {
             "type": "string"
           },
           "published_at": {
@@ -533,7 +533,7 @@
       },
       "NewRace": {
         "properties": {
-          "Noms": {
+          "noms": {
             "type": "string"
           },
           "published_at": {

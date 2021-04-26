@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "races",
+  "collectionName": "personnages",
   "info": {
-    "name": "Race",
+    "name": "Personnage",
     "description": ""
   },
   "options": {
@@ -13,6 +13,16 @@
   "attributes": {
     "noms": {
       "type": "string"
+    },
+    "heros": {
+      "type": "boolean"
+    },
+    "xp": {
+      "type": "integer"
+    },
+    "bande": {
+      "model": "bande",
+      "via": "personnages"
     }
   }
 }

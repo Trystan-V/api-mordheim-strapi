@@ -11,7 +11,7 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "Noms": {
+    "noms": {
       "type": "string",
       "regex": "^\\w"
     },
@@ -22,6 +22,10 @@
       "plugin": "users-permissions",
       "model": "user",
       "via": "bandes"
+    },
+    "personnages": {
+      "via": "bande",
+      "collection": "personnage"
     }
   }
 }
